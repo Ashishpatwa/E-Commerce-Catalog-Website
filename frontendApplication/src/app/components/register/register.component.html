@@ -1,0 +1,75 @@
+<section class="login_page">
+    <div class="login_container">
+        <img src="assets/registerImage.jpeg" style=" width: 10rem;">
+        <h1>Create account!</h1>
+        <p>It takes 30 sec to complete</p>
+        <form [formGroup]="registerUser" (ngSubmit)="registerUser.status !== 'INVALID' && handleregister()" class="form-outline" >
+           <div class="text-danger d-flex justify-content-center ">{{responseMessage}}</div>
+            <div class="form_row">
+                <div class="form_column">
+
+                    <div class="form_col_6" style="width: 95% !important;">
+                        <label for="gmail" class="form_label">Gmail</label>
+                        <input type="gmail" formControlName="gmail" name="gmail" class="form-text"  [ngClass]="{error : getControl('gmail')?.errors && getControl('gmail')?.touched}">
+                        <div *ngIf="getControl('gmail')?.errors && getControl('gmail')?.touched">
+                           <small class="text-danger" *ngIf="getControl('gmail')?.errors?.['required']; else notifyme">Gmail is required </small>
+                           <ng-template #notifyme>
+                               <small class="text-danger" *ngIf="getControl('gmail')?.errors">Correct Gmail is required </small>
+                           </ng-template>
+                           
+                       </div>
+                    </div>
+                   
+                </div>
+                
+                <div class="form_column">
+                    <div class="form_col_6">
+                        <label for="firstName" class="form_label">Firstname</label>
+                        <input type="text"  formControlName="firstName" name="firstname" class="form-text" [ngClass]="{error : getControl('firstName')?.errors && getControl('firstName')?.touched}">
+                        <div *ngIf="getControl('firstName')?.errors && getControl('firstName')?.touched">
+                           <small class="text-danger" *ngIf="getControl('firstName')?.errors?.['required']">First Name is required </small>
+                           <small class="text-danger" *ngIf="getControl('firstName')?.errors?.['minlength']">Atleast 2 characters is required. </small>
+                           <small class="text-danger" *ngIf="getControl('firstName')?.errors?.['pattern']">It Should only contain alphabets.</small>
+                        
+                       </div>
+                    </div>
+                    
+                    <div class="form_col_6">
+                        <label for="lastName" class="form_label">Lastname</label>
+                        <input type="text" formControlName="lastName" name="lastname" class="form-text" [ngClass]="{error : getControl('lastName')?.errors && getControl('lastName')?.touched}">
+                        <div *ngIf="getControl('lastName')?.errors && getControl('lastName')?.touched">
+                           <small class="text-danger" *ngIf="getControl('lastName')?.errors?.['required']">Last Name is required </small>
+                           <small class="text-danger" *ngIf="getControl('lastName')?.errors?.['minlength']">Atleast 2 characters is required </small>
+                           <small class="text-danger" *ngIf="getControl('lastName')?.errors?.['pattern']">It Should only contain alphabets.</small>
+                           
+                       </div>
+                    </div>
+                </div>
+                
+                <div class="form_column">
+                   
+                    <div class="form_col_6">
+                        <label for="input" class="form_label">Password</label>
+                    <input type="password" formControlName="password" name="password" class="form-text" [ngClass]="{error : getControl('password')?.errors && getControl('password')?.touched}">
+                    <div *ngIf="getControl('password')?.errors && getControl('password')?.touched">
+                       <small class="text-danger" *ngIf="getControl('password')?.errors?.['required']">Password is required </small>
+                       <small class="text-danger" *ngIf="getControl('password')?.errors?.['minlength']">Atleast 6 characters is required </small>
+                   </div>
+                    </div>
+                    <div class="form_col_6">
+                        <label for="repassword" class="form_label">Re-Password</label>
+                    <input type="password" formControlName="repassword" name="re-password" class="form-text" [ngClass]="{error : getControl('repassword')?.errors && getControl('repassword')?.touched}">
+                    <div *ngIf="getControl('repassword')?.errors && getControl('repassword')?.touched">
+                       <small class="text-danger" *ngIf="getControl('repassword')?.errors?.['required']">Re-password is required </small>
+                       <small class="text-danger" *ngIf="getControl('repassword')?.errors?.['minlength']">Atleast 6 characters is required </small>
+                   </div>
+                    </div>
+                </div>
+            
+                
+                <button class="button" [disabled]="registerUser.status === 'INVALID'">Sign in</button>
+                <div class="d-flex justify-content-center">Already have an account? .<div class="registerButton" (click)="navigateToLogin()"> Login</div></div>
+            </div>
+        </form>
+    </div>
+</section>

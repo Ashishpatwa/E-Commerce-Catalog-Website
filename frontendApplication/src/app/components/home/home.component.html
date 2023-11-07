@@ -1,0 +1,67 @@
+<div class="bottom">
+    <div class="nav-bar">
+        <div class="search-items">
+            <form class="adjust">
+                <img src="assets/search.jpeg" alt="search">
+                <input type="text" name="search_input" id="search_input" placeholder="Search"
+                    (keyup.enter)="handleSearch($event)">
+            </form>
+
+
+            <div class="dropdown">
+                <button class="dropdown-btn">Filter</button>
+                <!-- <div class="dropdown-content" [class.show]="dropdownVisible"> -->
+                <select [(ngModel)]="selectedName" class="dropdown-btn">
+                    <option value="All">All</option>
+                    <option value="Brand">Brand</option>
+                    <option value="Name">Name</option>
+                    <option value="Code">Code</option>
+                    <option value="Price" *ngIf="islogin">Price</option>
+                </select>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <div *ngIf="NoProductFound == false; else nofound ">
+        <h1 class="termheader">All Products</h1>
+        <div class="friend_container">
+            <div *ngFor="let product of getAllProducts;let indexOfelement=index;">
+
+                <div class="friend_img">
+
+                    <img src={{product.image}} alt="">
+
+                    <div class="friend_info">
+                        <li>{{product.brand}}</li>
+                        <li>{{product.name}}</li>
+                        <li *ngIf="islogin">₹{{product.price}}</li>
+                        <button class="btn btn-outline-primary btn-sm mt-1" (click)="getProductDetail(indexOfelement)">
+                            View Details</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <ng-template #nofound>
+        
+<div class="bottom_container">
+    <div class="error_404">
+        <div class="error_page">
+            <div class="content">
+                <h1>404!</h1>
+                <h3>No result found which you're looking for</h3>
+                <div class="button" (click)="navigateToHome()">
+                    <a>Back to home</a>
+                </div>
+            </div>
+            <div class="gif">
+                <img src="assets/noresult.png">
+            </div>
+        </div>
+    </div>
+</div>
+    </ng-template>
+</div>

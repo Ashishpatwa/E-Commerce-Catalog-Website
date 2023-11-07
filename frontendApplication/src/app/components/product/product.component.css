@@ -1,0 +1,27 @@
+.searchItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+.form-control{
+    width: 10rem;
+}
+.brand{
+    font-size: 1.5rem;
+    color:#40a8c4;
+    font-weight: 600;
+}
+.name{
+    font-size: 1.1rem;
+    color: rgb(47, 47, 47);
+}
+.price{
+    font-size: 1.3rem;
+    color: rgb(47, 47, 47);
+    font-weight: 600;
+}
+#des{
+    padding: 1rem;
+}

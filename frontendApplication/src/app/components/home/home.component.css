@@ -1,0 +1,249 @@
+.bottom {
+  
+    background-color: rgb(249, 245, 245);
+      /* margin-top: 3.5rem; */
+      padding: 2.5rem;
+      width: 100%;
+      box-sizing: border-box;
+      min-height: calc(100% - 7rem);
+  
+  
+  }
+  h1{
+    margin-top: 2rem;
+  }
+.friend_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    background-color: rgb(250, 250, 250);
+    padding: 3rem 2rem;
+  }
+  .friend_container .friend_img {
+    height: 30rem;
+    position: relative;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.26);
+   
+  }
+  .friend_container .friend_img img {
+    width: 100%;
+    height: 65%;
+    object-fit:contain;
+    
+  }
+  .friend_container .friend_img .friend_info {
+  
+    background-color: rgb(249, 246, 246);
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: .5rem 1.5rem;
+    width: 100%;
+    height: 35%;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    /* padding: 0 1rem; */
+   
+  }
+  .friend_container .friend_img .friend_info li {
+    list-style: none;
+   padding: 0;
+   font-size: 1.1rem;
+   overflow: hidden;
+   font-weight: 500;
+   color: rgb(43, 42, 42);
+   
+  }
+  .friend_container .friend_img .friend_info li:first-child{
+    list-style: none;
+     padding: 0;
+     font-weight:700;
+     font-size: 1rem;
+     overflow: hidden;
+     color: rgb(81, 77, 77);
+     /* text-overflow: ellipsis; */
+     
+  }
+   .friend_container .friend_img .friend_info li:nth-child(even){
+     font-size: .9rem;
+     /* font-weight: 600; */
+     color: rgb(81, 77, 77);
+     overflow: hidden;
+
+  }
+     /* text-overflow: ellipsis; */
+   
+  
+  h1.termheader{
+    width: 100%;
+    text-align-last: center;
+    padding: 0  0 1.5rem 0;
+    font-size: 1.2rem;
+}
+p.terms{
+    text-align-last: center;
+}
+
+.search-items{
+
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.adjust {
+  height: 2.5rem;
+  border: 1.7px solid #40a8c4;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  display: flex;
+  overflow: hidden;
+  margin: 0 1rem;
+  /* width: auto; */
+}
+
+
+.search-icon {
+  padding: 5px;
+  background-color: #40a8c4;
+  color: white;
+  cursor: pointer;
+}
+
+#search_input {
+  outline: none;
+  font-family: inherit;
+  border-style: none;
+  padding-left: 6px;
+  font-size: 20px;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline;
+  border: 1px solid rgb(165, 165, 165);
+  /* border-radius: .5rem;*/
+}
+
+.dropdown-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+ 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 99;
+  outline: none;
+  /* padding: 10rem !important; */
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.dropdown-content select:focus {
+  outline: none;
+}
+
+.bottom_container {
+
+  height: calc(100vh - 3.8rem);
+  width: 100%;
+  display: flex;
+  background-color: rgb(247, 245, 245);
+}
+
+.error_404{
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  margin: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 7rem);
+
+}
+.error_page{
+  width: fit-content;
+  height: calc(100vh - 5.8rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: bisque; */
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 4rem 0;
+  box-sizing: border-box;
+  margin-top: 6rem;
+  /* background-color: aqua; */
+}
+h1{
+  font-size: 4rem;
+  margin: 1rem 0 2rem;
+}
+h3{
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+h2{
+  font-size: .8rem;
+  margin: 0 0 1rem;
+}
+.button{
+  width: fit-content;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 .7rem;
+  border-radius: 1rem;
+  background-color: palevioletred;
+  cursor: pointer;
+ 
+}
+.button a{
+  text-decoration: none;
+  color: white;
+ 
+}
+.gif{
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 50%;
+}
+.gif img{
+  width: 20rem;
+  height: 100%;
+}

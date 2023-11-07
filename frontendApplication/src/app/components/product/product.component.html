@@ -1,0 +1,70 @@
+<section style="background-color: #eee;color: black;">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src={{image}} alt="avatar" class=" img-fluid" style="width: 300px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8" >
+                <div class="card mb-4" id="des" style="min-height: 430px;" >
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="mb-0" class="brand">{{brand}}</p>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p class="mb-0" class="name">{{name}}</p>
+                            </div>
+
+                        </div>
+                        
+                        <div class="row">
+                            
+                                <p class="mb-0" class="price">₹{{price}}</p>
+                            
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="text-muted mb-0" class="descript">Description</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{details}}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-3">Deliver to</p>
+                            </div>
+                            <!-- <form class="row g-3">
+                                <div class="col-auto">
+                                  <input type="text" class="form-control" id="inputPincode" placeholder="Pincode">
+                                </div>
+                                <div class="col-auto">
+                                  <button type="submit" class="btn btn-primary mb-3">Check</button>
+                                </div>
+                              </form> -->
+                              
+                            <form [formGroup]="ServiceabilityCheck">
+                                <div class="searchItem mb-2">
+                                <input class="form-control" type="text" formControlName="Pincode" name="Pincode" placeholder="Pincode"><br>
+                                <button class="btn signin btn btn-info" (click)="checkPincode()">Check Delivery</button>
+                                </div>
+                                <span *ngIf="Serviceable" class="text-success"> Woah!! Serviceability is Available at your location </span>
+                                <span *ngIf="NotServiceable" class="text-danger">Alas! Serviceability is not Available at your
+                                    location</span><br>
+                                <span *ngIf="Serviceable" class="text-primary">Delivery within {{days}}days</span>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
